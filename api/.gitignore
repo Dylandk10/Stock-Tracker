@@ -9,7 +9,6 @@
 
 #remove project config files
 appsettings.json
-data/
 migrations/
 # User-specific files
 *.rsuser

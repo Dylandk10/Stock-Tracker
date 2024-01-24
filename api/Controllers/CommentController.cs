@@ -22,6 +22,11 @@ namespace api.Controllers
             _stockRepo = IStockRepo;
         }
 
+
+
+
+        
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -34,6 +39,13 @@ namespace api.Controllers
 
             return Ok(commentDto);
         }
+
+
+
+
+
+
+
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -51,6 +63,12 @@ namespace api.Controllers
 
             return Ok(comment.ToCommentDto());
         }
+
+
+
+
+
+
 
         [HttpPost("{stockId:int}")]
         public async Task<IActionResult> Create([FromRoute] int stockId, CreateCommentDto commentDto)
@@ -71,6 +89,12 @@ namespace api.Controllers
             return CreatedAtAction(nameof(GetById), new { id = commentModel.Id}, commentModel.ToCommentDto());
 
         }
+
+
+
+
+
+
 
         [HttpDelete]
         [Route("{id:int}")]
